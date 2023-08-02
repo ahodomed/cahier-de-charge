@@ -1,0 +1,86 @@
+
+
+Table "Users" (Utilisateurs) :
+
+user_id (Clé primaire)
+username
+email
+password_hash
+first_name
+last_name
+address
+city
+country
+postal_code
+phone_number
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+Table "Products" (Produits) :
+
+product_id (Clé primaire)
+name
+description
+price
+image_url
+category_id (Clé étrangère vers la table "Categories")
+stock_quantity
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+Table "Categories" (Catégories de Produits) :
+
+category_id (Clé primaire)
+name
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+Table "Reviews" (Avis sur les Produits) :
+
+review_id (Clé primaire)
+product_id (Clé étrangère vers la table "Products")
+user_id (Clé étrangère vers la table "Users")
+rating
+comment
+review_date
+
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+Table "Carts" (Paniers d'Achat) :
+
+cart_id (Clé primaire)
+user_id (Clé étrangère vers la table "Users")
+creation_date
+
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+Table "CartItems" (Articles dans le Panier) :
+
+cart_item_id (Clé primaire)
+cart_id (Clé étrangère vers la table "Carts")
+product_id (Clé étrangère vers la table "Products")
+quantity
+
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+Table "Orders" (Commandes) :
+
+order_id (Clé primaire)
+user_id (Clé étrangère vers la table "Users")
+order_date
+total_amount
+status
+
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+Table "OrderItems" (Articles dans la Commande) :
+
+order_item_id (Clé primaire)
+order_id (Clé étrangère vers la table "Orders")
+product_id (Clé étrangère vers la table "Products")
+quantity
+unit_price
