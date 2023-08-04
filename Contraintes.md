@@ -28,14 +28,6 @@ Prévoir un support client réactif pour répondre aux questions et résoudre le
 Mettre en place des mécanismes de support, tels que le chat en direct ou un système de tickets, pour aider les clients rapidement.
 
 
--Besoin de Formation :
-Former le personnel administratif à l'utilisation du back office et des outils de gestion du site.
-S'assurer que les équipes comprennent bien les fonctionnalités du site et savent comment gérer les commandes et le catalogue de produits.
-
--Contraintes dûes au Cadre de la Formation :
-Respecter les contraintes de temps et de ressources liées au cadre de la formation.
-Optimiser la planification pour répondre aux délais fixés.
-
 
 -Performances du Site :
 Assurer que le site a des temps de chargement rapides pour éviter un taux de rebond élevé.

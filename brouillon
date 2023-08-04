@@ -1,86 +1,139 @@
+Fonctionnalité
+
+**Back Office (Interface Admin) :
+
+Interface d'administration conviviale pour gérer le contenu du site et les produits.
+Gestion des commandes passées par les clients.
+Catalogue de Produits :
+
+Affichage d'une liste complète de produits vestimentaires de mode africaine.
+Présentation des produits avec des images, des descriptions détaillées et des prix.
+Détails des Produits :
+
+Accès aux informations détaillées de chaque produit, y compris les caractéristiques, 
+les tailles disponibles.
 
 
-Table "Users" (Utilisateurs) :
 
-user_id (Clé primaire)
-username
-email
-password_hash
-first_name
-last_name
-address
-city
-country
-postal_code
-phone_number
+*** Client
 
-::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+-Recherche Avancée :
+Système de recherche avancée pour faciliter la recherche de produits spécifiques 
+(par genre, style, type de tissu, etc.).
+Possibilité de filtrer les résultats pour affiner la recherche.
 
-Table "Products" (Produits) :
-
-product_id (Clé primaire)
-name
-description
-price
-image_url
-category_id (Clé étrangère vers la table "Categories")
-stock_quantity
-
-::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-
-Table "Categories" (Catégories de Produits) :
-
-category_id (Clé primaire)
-name
-
-::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-
-Table "Reviews" (Avis sur les Produits) :
-
-review_id (Clé primaire)
-product_id (Clé étrangère vers la table "Products")
-user_id (Clé étrangère vers la table "Users")
-rating
-comment
-review_date
+- Panier d'Achat :
+Fonctionnalité de panier pour que les clients puissent ajouter des produits avant de 
+passer à la commande. 
+Visualisation du contenu du panier et calcul du total des achats.
 
 
-::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-
-Table "Carts" (Paniers d'Achat) :
-
-cart_id (Clé primaire)
-user_id (Clé étrangère vers la table "Users")
-creation_date
+- Processus de Commande :
+pour finaliser la commande (sélection des options de livraison,informations de contact, etc).
+Confirmation de la commande par email avec un récapitulatif des détails de la commande.
 
 
-::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+- Gestion des Comptes Utilisateurs :
+Création de comptes clients pour faciliter les achats récurrents.
+Connexion et déconnexion du compte utilisateur.
+Possibilité de gérer les informations personnelles et les adresses de livraison.
 
-Table "CartItems" (Articles dans le Panier) :
-
-cart_item_id (Clé primaire)
-cart_id (Clé étrangère vers la table "Carts")
-product_id (Clé étrangère vers la table "Products")
-quantity
-
-
-::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-
-Table "Orders" (Commandes) :
-
-order_id (Clé primaire)
-user_id (Clé étrangère vers la table "Users")
-order_date
-total_amount
-status
+-Suivi des Commandes :
+Système de suivi des commandes pour que les clients puissent suivre l'état de leur livraison en temps réel.
+Notifications par email concernant les mises à jour de statut des commandes.
 
 
-::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+- Support Client :
+Possibilité pour les clients de contacter le service client via un formulaire de contact.
+Section FAQ pour répondre aux questions courantes des clients.
 
-Table "OrderItems" (Articles dans la Commande) :
 
-order_item_id (Clé primaire)
-order_id (Clé étrangère vers la table "Orders")
-product_id (Clé étrangère vers la table "Products")
-quantity
-unit_price
+-Sécurité et Confidentialité :
+
+Protocoles de sécurité pour protéger les informations personnelles des clients et leurs commandes.
+Respect des réglementations en matière de confidentialité et de protection des données.
+
+-Version Mobile et Responsive :
+Adaptation du site pour offrir une expérience utilisateur optimale sur les appareils mobiles et tablettes.
+Optimisation pour les Moteurs de Recherche (SEO) :
+Utilisation de bonnes pratiques de référencement pour améliorer la visibilité du site dans les moteurs de recherche.
+Performances du Site :
+Temps de chargement rapide et optimisation des performances pour une navigation fluide.
+Maintenance et Mises à Jour :
+Plan de maintenance régulière pour garantir la stabilité et la fiabilité du site.
+Procédure pour les mises à jour futures du site et des fonctionnalités.
+Avec ces fonctionnalités, les clients pourront passer des commandes pour les produits de mode africaine 
+qu'ils souhaitent acheter, et le site administrera les commandes pour assurer une expérience client fluide et satisfaisante.
+
+
+
+1-Catalogue de Produits :
+
+-Sous-fonctionnalités :
+Affichage des produits avec des images, des descriptions et des prix.
+Catégorisation des produits par genre, style, type de tissu, etc.
+Fonctionnalité de recherche pour trouver des produits spécifiques.
+Mise en avant des produits les plus populaires et les nouveautés.
+
+-Contraintes :
+Les informations des produits doivent être complètes, précises et à jour.
+Les images doivent être de haute qualité pour une présentation attrayante.
+Assurer une gestion efficace des catégories de produits pour faciliter la navigation.
+
+
+2-Détails des Produits:
+-Sous-fonctionnalités :
+Page de détail de chaque produit avec des informations détaillées (caractéristiques, tailles, ...).
+Affichage des produits associés pour encourager l'exploration.
+Possibilité pour les clients de laisser des avis et des notes sur les produits.
+
+
+-Contraintes :
+Les informations doivent être précises et cohérentes avec celles du catalogue.
+La fonctionnalité des avis doit être gérée avec un système de modération pour éviter les faux avis.
+
+
+3-Processus de Commande :
+-Sous-fonctionnalités :
+pour commander un produit le client contacter la boutique 
+
+-Contraintes :
+prévoir un lien menant vers la page de contact permettant au client d'envoyer un message.
+
+4-Gestion des Comptes Utilisateurs :
+-Sous-fonctionnalités :
+Création de comptes clients pour faciliter les achats récurrents.
+Connexion et déconnexion du compte utilisateur.
+Gestion des informations personnelles et des adresses de livraison.
+
+
+-Contraintes :
+Assurer la sécurité des informations personnelles des clients.
+Permettre aux clients de récupérer leur mot de passe en cas d'oubli.
+
+
+5-Support Client :
+-Sous-fonctionnalités :
+Possibilité pour les clients de contacter le service client via un formulaire de contact.
+Section FAQ pour répondre aux questions courantes des clients.
+
+
+-Contraintes :
+Le service client doit être réactif et résoudre les problèmes rapidement.
+La section FAQ doit être régulièrement mise à jour en fonction des questions les plus fréquentes.
+
+
+6-Sécurité et Confidentialité :
+-Sous-fonctionnalités :
+Utilisation de certificats SSL pour sécuriser les connexions.
+Conformité aux réglementations en matière de protection des données.
+
+
+-Contraintes :
+Les protocoles de sécurité doivent être régulièrement audités et mis à jour.
+Les politiques de confidentialité doivent être clairement communiquées aux clients.
+
+
+
+
+
